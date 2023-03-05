@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 const Card = (props) => {
   const { add, Delete, Edit,setAdd } = props;
-  //  console.log("data",props.add);
+ 
   const [data,setData]= useState(add);
   const handleEnd = (res)=>{
    if(!res.destination) return;

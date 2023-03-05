@@ -30,19 +30,16 @@ const Form = () => {
   const handleSave = (e) => {
     e.preventDefault();
     if (edit !== "") {
-      console.log("ok", edit);
-      let FilterData = add.map((res) => {
-        if (res.id === edit) {
+          let FilterData = add.map((res) => {
+            if (res.id === edit) {
           return data;
         } else {
           return res;
         }
       });
-      console.log("filter", FilterData);
-      setAdd(FilterData);
+         setAdd(FilterData);
     } else {
-      console.log("data", data);
-      setAdd([...add, data]);
+          setAdd([...add, data]);
     }
     setData({ Name: "", Email: "", Subject: "", Message: "", id: uuidv4() });
     setShow(false);
@@ -50,16 +47,14 @@ const Form = () => {
   };
 
   const Delete = (id) => {
-    console.log("index", id);
-    setAdd((value) => {
+     setAdd((value) => {
       return value.filter((res) => {
         return res.id !== id;
       });
     });
   };
   const Edit = (id) => {
-    console.log(id);
-    const editData = add.find((res) => res.id === id);
+     const editData = add.find((res) => res.id === id);
 
     setData(editData);
     setEdit(id);
